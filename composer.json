@@ -1,0 +1,26 @@
+{
+    "name": "gof/margof",
+    "description": "Framework de Gof",
+    "type": "project",
+    "license": "prorietary",
+    "authors": [
+        {
+            "name": "Cesar Dreyf",
+            "email": "dreyfcesar@gmail.com",
+            "role": "Creador"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "gof/gof": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/home/dreyf/proyectos/php/gof"
+        }
+    ]
+}

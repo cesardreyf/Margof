@@ -1,2 +1,8 @@
 # Vim
 *.sw[op]
+
+# Composer
+vendor/
+
+# PHPUnit
+.phpunit.result.cache
