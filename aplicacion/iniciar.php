@@ -1,5 +1,12 @@
 <?php
 
+    use Gof\Datos\Archivos\Archivo;
+    use Gof\Gestor\Mensajes\Guardar\GuardarEnArchivo;
+    use Gof\Gestor\Registro\Simple\RegistroSimple;
+    use Gof\Sistema\MVC\Registros\Errores\GuardarEn;
+    use Gof\Sistema\MVC\Registros\Errores\Traductor as TraductorDeErrores;
+    use Gof\Sistema\MVC\Sistema as SistemaMVC;
+
     // Depuración
     error_reporting(E_ALL);
     ini_set('display_errors', true);
@@ -7,12 +14,18 @@
     // Composer
     require '../vendor/autoload.php';
 
-    // Sistema Modelo-Vista-Controlador M.V.C
-    $sistema   = new Gof\Sistema\MVC\Sistema();
+    // Sistema M.V.C de Gof
+    $sistema = new SistemaMVC();
     $registros = $sistema->registros();
-    $errores   = $registros->errores();
+    $errores = $registros->errores();
 
     register_shutdown_function([$errores, 'registrar']);
+
+    // Almacenamiento de errores
+    $traductorDeErrores = new TraductorDeErrores();
+    $errorLog = new Archivo(dirname(__DIR__).'/registros/errores.log');
+    $registroLog = new RegistroSimple(new GuardarEnArchivo($errorLog));
+    $errores->guardado()->agregar(new GuardarEn($registroLog, $traductorDeErrores));
 
     // Aplicacion Web
     require 'aplicacion.php';
