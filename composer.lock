@@ -12,7 +12,7 @@
             "dist": {
                 "type": "path",
                 "url": "/home/dreyf/proyectos/php/gof",
-                "reference": "5ba3ce06901254edfa55735b893ea9e53ac99166"
+                "reference": "182a6911163bd4019e70f80159444f2774bfd64d"
             },
             "require": {
                 "php": ">=8.2"
