@@ -1,5 +1,6 @@
 <?php
 
+    use Configuracion\Rutas\Simple\Rutas;
     use Gof\Datos\Archivos\Archivo;
     use Gof\Datos\Archivos\Carpeta;
     use Gof\Sistema\MVC\Sistema as SistemaMVC;
@@ -37,6 +38,11 @@
     $autoload->reservar('Controlador',   new Carpeta(__DIR__ . '/Controladores'));
     $autoload->reservar('Vista',         new Carpeta(__DIR__ . '/Vistas'));
     $autoload->reservar('',              new Carpeta(__DIR__ . '/Modelos'));
+
+    $enrutador = $sistema->rutas();
+    $enrutador->simple()->datos = new Rutas();
+    $enrutador->simple()->activar();
+    $enrutador->procesar();
 
     // Aplicacion Web
     require 'aplicacion.php';
