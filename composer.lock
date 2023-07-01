@@ -4,15 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6e2cd88b4d7e282623fef7b40fa123d6",
+    "content-hash": "74e952a89b6d02947b45201ec038d1c2",
     "packages": [
         {
             "name": "gof/gof",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cesardreyf/Gof.git",
+                "reference": "d7cda8f1b66f6facee2c5486fef57593cf9aa444"
+            },
             "dist": {
-                "type": "path",
-                "url": "/home/dreyf/proyectos/php/gof",
-                "reference": "a42491f3734f7e3cb8702dceb6fed2a63a42c4f6"
+                "type": "zip",
+                "url": "https://api.github.com/repos/cesardreyf/Gof/zipball/d7cda8f1b66f6facee2c5486fef57593cf9aa444",
+                "reference": "d7cda8f1b66f6facee2c5486fef57593cf9aa444",
+                "shasum": ""
             },
             "require": {
                 "php": ">=8.2"
@@ -20,6 +26,7 @@
             "require-dev": {
                 "phpunit/phpunit": "^9.5"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -42,9 +49,11 @@
                     "email": "dreyfcesar@gmail.com"
                 }
             ],
-            "transport-options": {
-                "relative": false
-            }
+            "support": {
+                "source": "https://github.com/cesardreyf/Gof/tree/master",
+                "issues": "https://github.com/cesardreyf/Gof/issues"
+            },
+            "time": "2023-07-01T12:37:56+00:00"
         }
     ],
     "packages-dev": [

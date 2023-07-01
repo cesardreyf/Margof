@@ -19,8 +19,8 @@
     },
     "repositories": [
         {
-            "type": "path",
-            "url": "/home/dreyf/proyectos/php/gof"
+            "type": "vcs",
+            "url": "https://github.com/cesardreyf/gof"
         }
     ]
 }
