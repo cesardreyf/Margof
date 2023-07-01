@@ -3,7 +3,8 @@
     use Configuracion\Rutas\Simple\Rutas;
     use Gof\Datos\Archivos\Archivo;
     use Gof\Datos\Archivos\Carpeta;
-    use Gof\Sistema\MVC\Sistema as SistemaMVC;
+    use Gof\Sistema\MVC\Aplicacion\Criterio\Ipiperf;
+    use Gof\Sistema\MVC\Sistema;
 
     // Depuración
     error_reporting(E_ALL);
@@ -13,7 +14,7 @@
     require '../vendor/autoload.php';
 
     // Sistema M.V.C de Gof
-    $sistema   = new SistemaMVC();
+    $sistema   = new Sistema();
     $registros = $sistema->registros();
 
     $errores     = $registros->errores();
@@ -39,12 +40,14 @@
     $autoload->reservar('Vista',         new Carpeta(__DIR__ . '/Vistas'));
     $autoload->reservar('',              new Carpeta(__DIR__ . '/Modelos'));
 
+    // Gestión de rutas
     $enrutador = $sistema->rutas();
     $enrutador->simple()->datos = new Rutas();
     $enrutador->simple()->activar();
     $enrutador->procesar();
 
     // Aplicacion Web
-    require 'aplicacion.php';
-    $aplicacion = new Aplicacion();
-    $aplicacion->iniciar();
+    $aplicacion = $sistema->aplicacion();
+    $aplicacion->namespaceDelControlador = 'Controlador\\';
+    $aplicacion->criterio = new Ipiperf();
+    $aplicacion->ejecutar();

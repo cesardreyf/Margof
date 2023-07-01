@@ -49,5 +49,6 @@ class Rutas extends Datos
      * @var array
      */
     public array $paginasDisponibles = [
+        'index'
     ];
 }
