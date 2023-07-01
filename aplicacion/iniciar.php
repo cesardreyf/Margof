@@ -7,8 +7,13 @@
     use Gof\Sistema\MVC\Sistema;
 
     // Depuración
-    error_reporting(E_ALL);
-    ini_set('display_errors', true);
+    define('PRODUCCION', false);
+
+    if( PRODUCCION ) {
+        error_reporting(E_ALL);
+        ini_set('track_errors', true);
+        ini_set('display_errors', true);
+    }
 
     // Composer
     require '../vendor/autoload.php';
@@ -25,9 +30,10 @@
 
     // Configuración del gestor de errores y excepciones
     $errores->guardar      = true;
-    $errores->imprimir     = true;
     $excepciones->guardar  = true;
-    $excepciones->imprimir = true;
+
+    $errores->imprimir     = PRODUCCION;
+    $excepciones->imprimir = PRODUCCION;
 
     // Establece dónde se guardarán los errores y las excepciones
     $errores->simple()->guardarEn(new Archivo(dirname(__DIR__)     . '/registros/errores.log'));
