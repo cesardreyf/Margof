@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    colors="true"
+    stopOnError="false"
+    stopOnFailure="false"
+    backupGlobals="false"
+    bootstrap="vendor/autoload.php">
+    <testsuites>
+        <testsuite name="todos">
+            <directory>test</directory>
+        </testsuite>
+        <testsuite name="controladores">
+            <directory>test/Controladores</directory>
+        </testsuite>
+        <testsuite name="modelos">
+            <directory>test/Modelos</directory>
+        </testsuite>
+        <testsuite name="vistas">
+            <directory>test/Vistas</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

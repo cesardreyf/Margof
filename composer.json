@@ -17,6 +17,14 @@
     "require-dev": {
         "phpunit/phpunit": "^9.5"
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Configuracion\\": "aplicacion/Configuraciones",
+            "Controlador\\": "aplicacion/Controladores",
+            "Vista\\": "aplicacion/Vistas",
+            "": "aplicacion/Modelos"
+        }
+    },
     "repositories": [
         {
             "type": "vcs",
