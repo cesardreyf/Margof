@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cesardreyf/Gof.git",
-                "reference": "d7cda8f1b66f6facee2c5486fef57593cf9aa444"
+                "reference": "1644377b42455d68a4c3e7142be07027dbbf6ec2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cesardreyf/Gof/zipball/d7cda8f1b66f6facee2c5486fef57593cf9aa444",
-                "reference": "d7cda8f1b66f6facee2c5486fef57593cf9aa444",
+                "url": "https://api.github.com/repos/cesardreyf/Gof/zipball/1644377b42455d68a4c3e7142be07027dbbf6ec2",
+                "reference": "1644377b42455d68a4c3e7142be07027dbbf6ec2",
                 "shasum": ""
             },
             "require": {
@@ -53,7 +53,7 @@
                 "source": "https://github.com/cesardreyf/Gof/tree/master",
                 "issues": "https://github.com/cesardreyf/Gof/issues"
             },
-            "time": "2023-07-01T12:37:56+00:00"
+            "time": "2023-07-03T11:55:31+00:00"
         }
     ],
     "packages-dev": [
