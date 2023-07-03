@@ -12,6 +12,8 @@ use Gof\Sistema\MVC\Aplicacion\Criterio\Ipiperf\Interfaz\Controlador as IControl
  */
 abstract class Controlador implements IControlador
 {
+    use Traits\Vista;
+
     /**
      * Almacena los registros que alteran el comportamiento del controlador
      *
@@ -27,6 +29,13 @@ abstract class Controlador implements IControlador
     protected readonly array $parametros;
 
     /**
+     * Almacena los datos para la vista
+     *
+     * @var array
+     */
+    protected array $datos = [];
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -39,6 +48,7 @@ abstract class Controlador implements IControlador
      */
     public function iniciar()
     {
+        $this->vista()->datos($this->datos);
     }
 
     /**
@@ -96,6 +106,7 @@ abstract class Controlador implements IControlador
      */
     public function renderizar()
     {
+        $this->vista()->renderizar();
     }
 
     /**
