@@ -14,6 +14,9 @@ class Index extends Controlador
         $this->datos['descripcion'] = 'Esto es solo un ejemplo de plantilla renderizable por el motor de plantillas Simple.';
         $this->datos['footer'] = 'Derechos Expirados - 2023';
         $this->vista()->plantilla('ejemplo');
+
+        $this->cookies()->duracion(time() + 120);
+        $this->cookies()->definir('algo', 'bobo');
     }
 
 }
