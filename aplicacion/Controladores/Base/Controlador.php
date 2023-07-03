@@ -13,6 +13,7 @@ use Gof\Sistema\MVC\Aplicacion\Criterio\Ipiperf\Interfaz\Controlador as IControl
 abstract class Controlador implements IControlador
 {
     use Traits\Cookies;
+    use Traits\Session;
     use Traits\Vista;
 
     /**
@@ -49,6 +50,9 @@ abstract class Controlador implements IControlador
      */
     public function iniciar()
     {
+        // Inicializa la sesión
+        $this->session()->iniciar();
+
         $this->vista()->datos($this->datos);
     }
 
