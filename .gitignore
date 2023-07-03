@@ -2,6 +2,7 @@
 *.sw[op]
 
 # Composer
+composer.lock
 vendor/
 
 # PHPUnit
