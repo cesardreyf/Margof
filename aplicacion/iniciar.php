@@ -32,8 +32,8 @@
     $errores->guardar      = true;
     $excepciones->guardar  = true;
 
-    $errores->imprimir     = PRODUCCION;
-    $excepciones->imprimir = PRODUCCION;
+    $errores->imprimir     = true;
+    $excepciones->imprimir = true;
 
     // Establece dónde se guardarán los errores y las excepciones
     $errores->simple()->guardarEn(new Archivo(dirname(__DIR__)     . '/registros/errores.log'));
