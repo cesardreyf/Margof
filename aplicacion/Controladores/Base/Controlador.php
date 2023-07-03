@@ -13,6 +13,7 @@ use Gof\Sistema\MVC\Aplicacion\Criterio\Ipiperf\Interfaz\Controlador as IControl
 abstract class Controlador implements IControlador
 {
     use Traits\Cookies;
+    use Traits\Redirigir;
     use Traits\Session;
     use Traits\Vista;
 
