@@ -14,6 +14,7 @@ abstract class Controlador implements IControlador
 {
     use Traits\ACSRF;
     use Traits\Cookies;
+    use Traits\Datos;
     use Traits\Redirigir;
     use Traits\Session;
     use Traits\Vista;
