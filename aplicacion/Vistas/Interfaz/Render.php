@@ -29,4 +29,11 @@ interface Render
      * @param array &$datos
      */
     public function datos(array &$datos);
+
+    /**
+     * Obtiene una referencia del array de datos del render
+     *
+     * @return array
+     */
+    public function& datosRef(): array;
 }

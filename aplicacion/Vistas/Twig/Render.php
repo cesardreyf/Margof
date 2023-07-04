@@ -116,4 +116,14 @@ class Render implements IRender
         $this->datos =& $datos;
     }
 
+    /**
+     * Devuelve una referencia a los datos
+     *
+     * @return array
+     */
+    public function& datosRef(): array
+    {
+        return $this->datos;
+    }
+
 }
