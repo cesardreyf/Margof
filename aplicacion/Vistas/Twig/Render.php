@@ -72,6 +72,10 @@ class Render implements IRender
      */
     public function renderizar(): bool
     {
+        if( empty($this->plantilla) ) {
+            return false;
+        }
+
         echo $this->twig->render("{$this->plantilla}{$this->extension}", $this->datos);
         return true;
     }
