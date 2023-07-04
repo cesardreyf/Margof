@@ -9,7 +9,6 @@ class Index extends Controlador
 
     public function indice()
     {
-        $this->redirigir()->a('ejemplo');
     }
 
 }

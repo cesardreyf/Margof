@@ -50,6 +50,5 @@ class Rutas extends Datos
      */
     public array $paginasDisponibles = [
         'index',
-        'ejemplo'
     ];
 }
