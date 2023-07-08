@@ -2,8 +2,8 @@
 
 namespace Controlador\Base;
 
-use Gof\Sistema\MVC\Aplicacion\Criterio\Ipiperf\Datos\Registros;
-use Gof\Sistema\MVC\Aplicacion\Criterio\Ipiperf\Interfaz\Controlador as IControlador;
+use Gof\Sistema\MVC\Controlador\Criterio\Ipiperf\Datos\Registros;
+use Gof\Sistema\MVC\Controlador\Criterio\Ipiperf\Interfaz\Controlador as IControlador;
 
 /**
  * Interfaz abstracta para los controladores

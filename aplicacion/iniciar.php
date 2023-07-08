@@ -3,7 +3,7 @@
     use Configuracion\Rutas\Simple\Rutas;
     use Gof\Datos\Archivos\Archivo;
     use Gof\Datos\Archivos\Carpeta;
-    use Gof\Sistema\MVC\Aplicacion\Criterio\Ipiperf;
+    use Gof\Sistema\MVC\Controlador\Criterio\Ipiperf;
     use Gof\Sistema\MVC\Sistema;
 
     // Depuración
@@ -50,10 +50,12 @@
     $enrutador = $sistema->rutas();
     $enrutador->simple()->datos = new Rutas();
     $enrutador->simple()->activar();
-    $enrutador->procesar();
+
+    // Gestión del controlador
+    $controlador = $sistema->controlador();
+    $controlador->espacioDeNombre('Controlador\\');
+    $controlador->criterio(new Ipiperf());
 
     // Aplicacion Web
     $aplicacion = $sistema->aplicacion();
-    $aplicacion->namespaceDelControlador = 'Controlador\\';
-    $aplicacion->criterio = new Ipiperf();
     $aplicacion->ejecutar();
