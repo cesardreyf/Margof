@@ -2,7 +2,7 @@
     "name": "gof/margof",
     "description": "Framework de Gof",
     "type": "project",
-    "license": "prorietary",
+    "license": "MIT",
     "authors": [
         {
             "name": "Cesar Dreyf",
@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "php": ">=7.4",
+        "php": ">=8.2",
         "gof/gof": "dev-master"
     },
     "require-dev": {
