@@ -24,11 +24,5 @@
             "Vista\\": "aplicacion/Vistas",
             "": "aplicacion/Modelos"
         }
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/cesardreyf/gof"
-        }
-    ]
+    }
 }
