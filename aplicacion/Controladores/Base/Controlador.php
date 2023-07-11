@@ -2,15 +2,14 @@
 
 namespace Controlador\Base;
 
-use Gof\Sistema\MVC\Controlador\Criterio\Ipiperf\Datos\Registros;
-use Gof\Sistema\MVC\Controlador\Criterio\Ipiperf\Interfaz\Controlador as IControlador;
+use Gof\Sistema\MVC\Controlador\Criterio\Ipiperf\Abstraccion\Controlador as IControlador;
 
 /**
- * Interfaz abstracta para los controladores
+ * Clase abstracta para los controladores
  *
  * @package Margof\Controlador\Base
  */
-abstract class Controlador implements IControlador
+abstract class Controlador extends IControlador
 {
     use Traits\ACSRF;
     use Traits\Cookies;
@@ -20,20 +19,6 @@ abstract class Controlador implements IControlador
     use Traits\Vista;
 
     /**
-     * Almacena los registros que alteran el comportamiento del controlador
-     *
-     * @var Registros
-     */
-    protected Registros $registros;
-
-    /**
-     * Almacena los parámetros recibidos por el enrutador
-     *
-     * @var array
-     */
-    protected readonly array $parametros;
-
-    /**
      * Almacena los datos para la vista
      *
      * @var array
@@ -41,21 +26,11 @@ abstract class Controlador implements IControlador
     protected array $datos = [];
 
     /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->registros = new Registros();
-    }
-
-    /**
      * Inicializa el controlador
      */
     public function iniciar()
     {
-        // Inicializa la sesión
         $this->session()->iniciar();
-
         $this->vista()->datos($this->datos);
     }
 
@@ -124,26 +99,6 @@ abstract class Controlador implements IControlador
      */
     public function finalizar()
     {
-    }
-
-    /**
-     * Establece los parámetros del controlador
-     *
-     * @param array $parametros
-     */
-    public function parametros(array $parametros)
-    {
-        $this->parametros = $parametros;
-    }
-
-    /**
-     * Obtiene los registros del controlador
-     *
-     * @return Registros
-     */
-    public function registros(): Registros
-    {
-        return $this->registros;
     }
 
 }
