@@ -2,6 +2,7 @@
 
 namespace Controlador\Base;
 
+use Configuracion\Inters;
 use Gof\Sistema\MVC\Controlador\Criterio\Ipiperf\Abstraccion\Controlador as IControlador;
 
 /**
@@ -32,6 +33,10 @@ abstract class Controlador extends IControlador
     {
         $this->session()->iniciar();
         $this->vista()->datos($this->datos);
+
+        // Gestión de inter's
+        $this->inter()->agregarLista(new Inters());
+        $this->inter()->ejecutar();
     }
 
     /**
