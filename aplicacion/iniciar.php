@@ -1,6 +1,6 @@
 <?php
 
-    use Configuracion\Rutas\Simple\Rutas;
+    use Configuracion\Enrutador;
     use Gof\Datos\Archivos\Archivo;
     use Gof\Datos\Archivos\Carpeta;
     use Gof\Sistema\MVC\Controlador\Criterio\Ipiperf;
@@ -48,12 +48,10 @@
 
     // Gestión de rutas
     $enrutador = $sistema->rutas();
-    $enrutador->simple()->datos = new Rutas();
-    $enrutador->simple()->activar();
+    $enrutador->configuracion(new Enrutador());
 
     // Gestión del controlador
     $controlador = $sistema->controlador();
-    $controlador->espacioDeNombre('Controlador\\');
     $controlador->criterio(new Ipiperf());
 
     // Aplicacion Web
