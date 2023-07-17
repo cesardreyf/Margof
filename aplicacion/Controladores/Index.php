@@ -7,9 +7,8 @@ use Controlador\Base\Controlador;
 class Index extends Controlador
 {
 
-    public function indice()
+    public function ejecutar($app)
     {
-        $this->datos()->web()->titulo('Página principal');
     }
 
 }

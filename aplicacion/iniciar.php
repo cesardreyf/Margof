@@ -1,6 +1,7 @@
 <?php
 
     use Configuracion\Enrutador;
+    use Configuracion\Inters;
     use Gof\Datos\Archivos\Archivo;
     use Gof\Datos\Archivos\Carpeta;
     use Gof\Sistema\MVC\Controlador\Criterio\Ipiperf;
@@ -46,14 +47,6 @@
     $autoload->reservar('Vista',         new Carpeta(__DIR__ . '/Vistas'));
     $autoload->reservar('',              new Carpeta(__DIR__ . '/Modelos'));
 
-    // Gestión de rutas
-    $enrutador = $sistema->rutas();
-    $enrutador->configuracion(new Enrutador());
-
-    // Gestión del controlador
-    $controlador = $sistema->controlador();
-    $controlador->criterio(new Ipiperf());
-
-    // Aplicacion Web
-    $aplicacion = $sistema->aplicacion();
-    $aplicacion->ejecutar();
+    $sistema->rutas()->configuracion(new Enrutador());
+    $sistema->inters()->agregarLista(new Inters());
+    $sistema->aplicacion()->ejecutar();
