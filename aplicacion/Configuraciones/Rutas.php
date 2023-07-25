@@ -2,6 +2,7 @@
 
 namespace Configuracion;
 
+use Controlador;
 use Gof\Gestor\Enrutador\Rut\Interfaz\Ruta;
 
 /**
@@ -21,6 +22,21 @@ class Rutas
      */
     public function __construct(Ruta $rutas)
     {
+        $this->paginaInexistente($rutas);
+        $this->paginaPrincipal($rutas);
+
+        // $rutas->agregar('ruta', Controlador::class);
+    }
+
+    public function paginaInexistente(Ruta $rutas)
+    {
+        $rutas->inexistente()->clase(Controlador\E404::class);
+    }
+
+    public function paginaPrincipal(Ruta $rutas)
+    {
+        $index = $rutas->agregar('', Controlador\Index::class);
+        $index->alias('index');
     }
 
 }

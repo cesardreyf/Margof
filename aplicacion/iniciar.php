@@ -1,14 +1,12 @@
 <?php
 
-    use Configuracion\Enrutador;
-    use Configuracion\Inters;
     use Gof\Datos\Archivos\Archivo;
     use Gof\Datos\Archivos\Carpeta;
     use Gof\Sistema\MVC\Controlador\Criterio\Ipiperf;
     use Gof\Sistema\MVC\Sistema;
 
     // Depuración
-    define('PRODUCCION', false);
+    define('PRODUCCION', true);
 
     if( PRODUCCION ) {
         error_reporting(E_ALL);
@@ -47,6 +45,7 @@
     $autoload->reservar('Vista',         new Carpeta(__DIR__ . '/Vistas'));
     $autoload->reservar('',              new Carpeta(__DIR__ . '/Modelos'));
 
-    $sistema->rutas()->configuracion(new Enrutador());
-    $sistema->inters()->agregarLista(new Inters());
+    $sistema->peticiones()->configuracion = new Configuracion\Peticiones();
+    $sistema->rutas()->configuracion = new Configuracion\Enrutador();
+    $sistema->inters()->agregarLista(new Configuracion\Inters());
     $sistema->aplicacion()->ejecutar();
