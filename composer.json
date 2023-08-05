@@ -12,7 +12,7 @@
     ],
     "require": {
         "php": ">=8.2",
-        "gof/gof": "^0.3"
+        "gof/gof": "^0.4"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5"

@@ -46,6 +46,6 @@
     $autoload->reservar('',              new Carpeta(__DIR__ . '/Modelos'));
 
     $sistema->peticiones()->configuracion = new Configuracion\Peticiones();
-    $sistema->rutas()->configuracion = new Configuracion\Enrutador();
+    $sistema->rutas()->configuracion = new Configuracion\Enrutador($sistema);
     $sistema->inters()->agregarLista(new Configuracion\Inters());
     $sistema->aplicacion()->ejecutar();

@@ -30,7 +30,7 @@ class Rutas
 
     public function paginaInexistente(Ruta $rutas)
     {
-        $rutas->inexistente()->clase(Controlador\E404::class);
+        $rutas->inexistente(Controlador\E404::class);
     }
 
     public function paginaPrincipal(Ruta $rutas)

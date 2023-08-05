@@ -2,8 +2,9 @@
 
 namespace Configuracion;
 
-use Gof\Gestor\Enrutador\Rut\Enrutador as Rut;
 use Gof\Sistema\MVC\Rutas\Configuracion;
+use Gof\Sistema\MVC\Rut\Rut;
+use Gof\Sistema\MVC\Sistema;
 
 /**
  * Configuración del enrutador
@@ -16,9 +17,9 @@ class Enrutador extends Configuracion
     /**
      * Constructor
      */
-    public function __construct()
+    public function __construct(Sistema $sistema)
     {
-        $this->enrutador = new Rut();
+        $this->enrutador = new Rut($sistema);
         new Rutas($this->enrutador->rutas());
     }
 
