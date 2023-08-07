@@ -43,6 +43,7 @@
     $autoload->reservar('Configuracion', new Carpeta(__DIR__ . '/Configuraciones'));
     $autoload->reservar('Controlador',   new Carpeta(__DIR__ . '/Controladores'));
     $autoload->reservar('Vista',         new Carpeta(__DIR__ . '/Vistas'));
+    $autoload->reservar('Inter',         new Carpeta(__DIR__ . '/Inters'));
     $autoload->reservar('',              new Carpeta(__DIR__ . '/Modelos'));
 
     $sistema->peticiones()->configuracion = new Configuracion\Peticiones();

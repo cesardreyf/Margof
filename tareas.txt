@@ -1,0 +1,5 @@
+TAREAS
+
+    . Eliminar el modelo Mi\*
+
+        Fue hecho para un ejemplo y debería ser borrado o cambiado a algo mejor.

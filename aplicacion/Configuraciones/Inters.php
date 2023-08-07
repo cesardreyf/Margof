@@ -3,6 +3,7 @@
 namespace Configuracion;
 
 use Gof\Interfaz\Lista;
+use Inter;
 
 /**
  * Lista de inters que se ejecutarán antes de los controladores
@@ -13,13 +14,22 @@ class Inters implements Lista
 {
 
     /**
-     * Lista de inters
+     * Lista de inters que se ejecutarán antes del controlador
      *
-     * @return array
+     * Todos los inters aquí definidos se ejecutarán independientemente de los
+     * inters declarados de cada ruta y antes que ellos.
+     *
+     * NOTA: El orden de definición es importante.
+     *
+     * @return Gof\Sistema\MVC\Interfaz\Ejecutable[]
      */
     public function lista(): array
     {
         return [
+            new Inter\Session(),
+            new Inter\Cookies(),
+            new Inter\Vista(),
+            new Inter\Datos(),
         ];
     }
 

@@ -4,6 +4,7 @@ namespace Configuracion;
 
 use Controlador;
 use Gof\Gestor\Enrutador\Rut\Interfaz\Ruta;
+use Inter;
 
 /**
  * Define las rutas accesibles
