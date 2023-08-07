@@ -97,10 +97,31 @@ class Render implements IRender
      * De ese nombre relaciona la plantilla.
      *
      * @param Controlador $controlador Controlador a relacionar.
+     *
+     * @see Render::relacionarPlantilla()
      */
-    public function relacionarPlantilla(Controlador $clase)
+    public function relacionarControlador(Controlador $controlador)
     {
-        $plantilla = get_class($clase);
+        $this->relacionarPlantilla(get_class($clase));
+    }
+
+    /**
+     * Relaciona la plantilla con el nombre de una clase
+     *
+     * Define el valor de la plantilla teniendo en cuenta el nombre completo de
+     * una clase y lo relaciona con la estructura de carpetas de las
+     * plantillas.
+     *
+     * Por defecto remueve el primer espacio de nombre (todo lo que esté antes
+     * del caracter '\').
+     *
+     * Ejemplo: si se pasa 'Controlador\Perfil\Editar' se relacionará la
+     * plantilla a la ruta '{carpeta_plantillas}/perfil/editar.{extension}'.
+     *
+     * @param string $clase Nombre completo de la clase.
+     */
+    public function relacionarPlantilla(string $plantilla)
+    {
         $plantilla = strtolower($plantilla);
         $plantilla = substr($plantilla, strpos($plantilla, '\\') + 1);
         $this->plantilla = str_replace('\\', DIRECTORY_SEPARATOR, $plantilla);
