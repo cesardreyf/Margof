@@ -11,7 +11,7 @@ use Gof\Sistema\MVC\Interfaz\Ejecutable;
  *
  * @package Inter
  */
-class Session implements Ejecutable
+class InterSession implements Ejecutable
 {
 
     /**

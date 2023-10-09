@@ -12,7 +12,7 @@ use Vista\Simple\Render as VistaSimple;
  *
  * @package Inter
  */
-class Vista implements Ejecutable
+class InterVista implements Ejecutable
 {
 
     /**

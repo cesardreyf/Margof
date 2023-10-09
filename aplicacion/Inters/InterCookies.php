@@ -11,7 +11,7 @@ use Gof\Sistema\MVC\Interfaz\Ejecutable;
  *
  * @package Inter
  */
-class Cookies implements Ejecutable
+class InterCookies implements Ejecutable
 {
 
     /**

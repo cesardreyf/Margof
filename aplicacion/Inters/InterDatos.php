@@ -11,7 +11,7 @@ use Mi\Datos\Gestor;
  *
  * @package Inter
  */
-class Datos implements Ejecutable
+class InterDatos implements Ejecutable
 {
 
     /**

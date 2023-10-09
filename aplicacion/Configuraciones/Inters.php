@@ -26,10 +26,10 @@ class Inters implements Lista
     public function lista(): array
     {
         return [
-            new Inter\Session(),
-            new Inter\Cookies(),
-            new Inter\Vista(),
-            new Inter\Datos(),
+            new Inter\InterSession(),
+            new Inter\InterCookies(),
+            new Inter\InterVista(),
+            new Inter\InterDatos(),
         ];
     }
 
