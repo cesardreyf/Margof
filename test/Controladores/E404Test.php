@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Controladores;
 
-use Controlador\Base\Controlador;
 use Controlador\E404;
+use Gof\Sistema\MVC\Interfaz\Ejecutable;
 use PHPUnit\Framework\TestCase;
 
 class E404Test extends TestCase
@@ -19,7 +19,7 @@ class E404Test extends TestCase
 
     public function testExtenderDelControladorBase(): void
     {
-        $this->assertInstanceOf(Controlador::class, $this->controlador);
+        $this->assertInstanceOf(Ejecutable::class, $this->controlador);
     }
 
 }

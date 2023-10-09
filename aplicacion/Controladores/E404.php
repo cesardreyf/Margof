@@ -2,12 +2,13 @@
 
 namespace Controlador;
 
-use Controlador\Base\Controlador;
+use Gof\Sistema\MVC\Aplicacion\DAP\DAP;
+use Gof\Sistema\MVC\Interfaz\Ejecutable;
 
-class E404 extends Controlador
+class E404 implements Ejecutable
 {
 
-    public function ejecutar($app)
+    public function ejecutar(DAP $app)
     {
     }
 
